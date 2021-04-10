@@ -2,4 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/rkmasonr/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R /home/rkmasonr/testing $DEPLOYPATH
+
+#---
+#deployment:
+#  tasks:
+#    - export DEPLOYPATH=/home/rkmasonr/public_html/
+#    - /bin/cp -R * $DEPLOYPATH
