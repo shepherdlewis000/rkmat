@@ -1,8 +1,14 @@
 ---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/rkmasonr/public_html/
-    - /bin/cp -R /home/rkmasonr/testing $DEPLOYPATH
+      tasks:
+        - export DEPLOYPATH=/home/rkmasonr/public_html
+        - /bin/cp -r /home/rkmasonr/repositories/rkmat2/* $DEPLOYPATH
+
+#---
+#deployment:
+#  tasks:
+#    - export DEPLOYPATH=/home/rkmasonr/public_html/
+#    - /bin/cp -R /home/rkmasonr/repositories/rkmat/gittest $DEPLOYPATH
 
 #---
 #deployment:
