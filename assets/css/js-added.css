@@ -48,9 +48,13 @@
 }
 
 .service-card:hover{
-    transform:scale(1.1);
+    transform:scale(1.05);
     border-color: #007bff;
     border-style: solid;
+}
+
+.service-card:hover .fa-my-link{
+    background-color: #0275d8;
 }
 
 #testimonials-p-1, #testimonials-p-2{
@@ -95,4 +99,35 @@
     right: 15px;
     text-align: center;
     /* Other styles here */
+}
+.shadow-img{
+    box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.5);
+}
+.link-overlay{
+    position: absolute;
+    top: 23.5%;
+    left: 32.8%;
+    transition: .3s ease;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    z-index: 2;
+}
+/* Icon styling */
+.link-icon {
+    color: red;
+    font-size: 92px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.overlayed{
+    position: relative;
+}
+.fa-my-link{
+    background-color: grey;
+    padding: 10px;
+    border-radius: 50%;
 }
