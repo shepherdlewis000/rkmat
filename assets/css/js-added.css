@@ -1,0 +1,98 @@
+/* CUSTOM ICONS */
+.chicago-icon {
+    background: url('../img/icons/icons8-chicago-30.png');
+    height: 30px;
+    width: 30px;
+    /*display: block; */
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    /* Other styles here */
+}
+
+.snow-icon {
+    background: url('../img/icons/icons8-snow-30.png');
+    height: 30px;
+    width: 30px;
+    /*display: block; */
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    /* Other styles here */
+}
+
+.trowel-icon {
+    background: url('../img/icons/icons8-trowel-30.png');
+    height: 30px;
+    width: 30px;
+    /*display: block; */
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    /* Other styles here */
+}
+
+.foundation-icon {
+    background: url('../img/icons/icons8-foundation-30.png');
+    height: 30px;
+    width: 30px;
+    /*display: block; */
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    /* Other styles here */
+}
+
+.service-card:hover{
+    transform:scale(1.1);
+    border-color: #007bff;
+    border-style: solid;
+}
+
+#testimonials-p-1, #testimonials-p-2{
+    max-width: 500px;
+}
+/*
+.has-error input[type="text"], .has-error input[type="email"], .has-error[type="tel"], .has-error select {
+    border: 1px solid #a94442;
+}
+*/
+.has-error { 
+    border-color:#a94442; color:#a94442; 
+}
+
+.service-box {
+    padding: 15px 20px 15px 70px;
+    /* top right bott left */
+}
+
+.service-box .icon {
+    font-size: 30px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 30px;
+    text-align: center;
+    color: #3b99e0;
+}
+
+.service-box h4 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.service-box .trowel-icon {
+    background: url('../../img/icons/icons8-trowel-30.png');
+    height: 30px;
+    width: 30px;
+    /*display: block; */
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    /* Other styles here */
+}
