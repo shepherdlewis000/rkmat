@@ -248,7 +248,7 @@ $(function () {
                 // POST values in the background the the php script
                 $.ajax({
                     type: "POST",
-                    url: 'review-form.php',
+                    url: 'submit-review.php',
                     data: $(this).serialize(),
                     success: function (data) {
                         console.log("submit-review.js:227 success entry");

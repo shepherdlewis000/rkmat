@@ -9,7 +9,65 @@
     This plugin allow you to create beautiful rating form. already styled.
 */
 
-;(function($){
+; (function ($) {
+        const badCaptchaBox =
+        `<div class="badcaptcha-box rounded d-inline-block 
+        text-danger bg-white border border-danger" 
+        style="width:367.5px;height:84.33px;">
+      <div class="row"
+        style="padding-top:9.89px;
+        padding-bottom:2.965px">
+        <div class="col-2 d-flex align-items-center"
+            style="padding-left:12px; padding-right:8px;">
+          <div class="inline-block icon-holder" 
+            style=
+                "width:100%; 
+                text-align: center;
+                padding-left:18px;
+                padding-bottom: 5px;"
+            >
+            <i class="fas fa-exclamation-circle fa-3x"></i>
+          </div> 
+        </div> <!-- end col-2 -->
+        <!-- start div.col-10 (second column) -->
+        <div class="col-10">
+          <div class="col-12 text-center">
+            <div class="font-weight-bold d-inline-block 
+                text-danger" 
+                style=
+                    "font-size: 1.1rem; 
+                    padding-left: 0px; 
+                    padding-top: 0rem;"
+            >
+                Captcha verification failed
+            </div> 
+          </div> <!-- end col-12 -->
+          <div class="col-12 text-center">
+            <div style=
+                "font-size:0.8rem; 
+                line-height: 63%; 
+                padding-top: 0.16rem; 
+                padding-bottom:0.31rem;"
+            >
+                <em class="text-danger">Answer wrong or other error</em> <!-- 27 chars -->
+            </div>
+          </div>       
+          <div class="col-12">
+            <div class="text-center" 
+                style=
+                    "margin-bottom: 0.5rem;
+                    ">
+              <a class="link text-primary" 
+                style="font-size:0.84rem;">
+                Try captcha again after clicking here
+              </a>
+            </div>
+          </div> <!-- end col-12 -->
+        </div> <!-- end col-10 (second column) -->
+      </div> <!-- end div.row -->
+    </div >`;
+
+
     $.fn.extend({
         betterRating: function( options ) {
             /**
@@ -73,27 +131,40 @@
                 
                 $.ajax({
                     type: "POST",
-                    url: 'review-form.php',
+                    url: 'submit-review.php',
                     data: $(this).serialize(),
                     success: function (data) {
-                        console.log("submit-review.js:227 success entry");
-                        clearTimeout(myto); // Cancel the timeout ajax failed msg
-                        console.log("submit-review.js:180 ajax success and "); // currChoice STILL undef
-                        console.log("currChoice is: " + getCurrChoice() + " and data is below:");
+                        console.log("better-rating.js137 success entry");
+                        //clearTimeout(myto); // Cancel the timeout ajax failed msg
+                        console.log("better-rating.js:139 ajax success and "); // currChoice STILL undef
+                        //console.log("currChoice is: " + getCurrChoice() + " and data is below:");
                         console.dir(data);
+                        var successBox =
+                        `           <div class="alert-successs alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                        </button>
+                                        Your review has been recorded. Thanks so much for your time!
+                                    </div>`;
                         $('#better-rating-form').find('.messages').html(successBox);
                         const animateSend = setTimeout(() => {
                             if (data.type === 'danger') {
                                 $('#better-rating-form').find('.messages').html(badCaptchaBox);
                             }
                             else if (data.type === 'success') {
-                                $('.circle-loader').toggleClass('load-complete');
-                                $('.checkmark').toggle();
+                                //$('.circle-loader').toggleClass('load-complete');
+                                //$('.checkmark').toggle();
                                 /* $('#sentButton').text("Sent!"); */
                                 $('#submit_button').hide('slow');
                                 $('#captcheck_container2').hide('slow');
                                 // empty the form
                                 $('#better-rating-form')[0].reset();
+                                var successAlert =
+                        `           <div class="alert-successs alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                        </button>
+                                        Your review has been recorded. Thanks so much for your time!
+                                    </div>`;
+
                             }
                         }, 2000);
 
@@ -107,7 +178,7 @@
                     
                         // If we have messageAlert and messageText
                         if (messageAlert && messageText) {
-                            console.log("line 49 in submit-review.js")
+                            console.log("line 175 in better-rating.js")
                             // inject the alert to .messages div in our form
                             $('#better-rating-form').find('.messages').html(alertBox);
                             $('#submit_button').hide('slow');
