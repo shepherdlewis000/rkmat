@@ -285,8 +285,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
-                        <!-- ADD service-card class ONCE SUBPAGE IS AVAILABLE -->
-                        <div class="card pt-3 px-3 shadow-img clean-card text-center mb-5">
+                        <div class="card pt-3 px-3 shadow-img clean-card text-center service-card mb-5">
                             <img class="card-img-top w-100 d-block" alt="Chicago Foundation Repair" src="assets/img/IMG_1309-foundation-repair-518x690.jpg">
                             <a class="stretched-link" alt="Chicago Foundation Repair"></a>
                             <div class="card-body info">
@@ -314,8 +313,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
-                            <!-- ADD service-card class ONCE SUBPAGE IS AVAILABLE -->
-                            <div class="card pt-3 px-3 shadow-img clean-card text-center mb-5">
+                        <div class="card pt-3 px-3 shadow-img clean-card text-center service-card mb-5">
                             <img class="card-img-top w-100 d-block" alt="Chicago Fireplace Refinishing" src="assets/img/IMG_3286-fireplace-refinishing-518x690.jpg">
                             <a class="stretched-link disabled" alt="Chicago Fireplace Refinishing"></a>
                             <div class="card-body info">
@@ -329,8 +327,7 @@
                         </div>
                     </div>  
                     <div class="col-sm-6 col-lg-4">
-                        <!-- ADD service-card class ONCE SUBPAGE IS AVAILABLE -->
-                        <div class="card pt-3 px-3 shadow-img clean-card text-center mb-5">
+                        <div class="card pt-3 px-3 shadow-img clean-card text-center service-card mb-5">
                             <img class="card-img-top w-100 d-block" alt="Chicago Tuckpointing" src="assets/img/wall-3244572_1920-pixabay-tuckpointing-518x690.jpg">
                             <a class="stretched-link disabled" alt="Chicago Tuckpointing"></a> 
                             <div class="card-body info">
@@ -611,13 +608,10 @@
                     <img class="img" src="assets/img/specialties2-transparent.png" alt="Chicago Masonry Repair Specialties">
                 </div>
                 <div class="col-6">
-                	<address>
                     <h5 class="text-light">RK Masonry and Tuckpointing</h5>
                     <h6 class="text-light mt-2">1572 Terrence Dr</h6>
                     <h6 class="text-light mb-2">New Lenox, IL 60451</h6>
                     <h5 class="mt-5"><a href="tel:708-212-2509">708-212-2509</a></h5>
-                    <h5 class="mt-3"><a href="https://rkmasonryandtuckpointing.com/">rkmasonryandtuckpointing.com</a>
-                  </address>
                 </div>
             </div>
             
