@@ -2,6 +2,15 @@
 clicking the link -->
 <HTML>
 <HEAD>
+            <!-- Global site tag (gtag.js) - Google Universal Analytics (old skool) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W3K62NXZV5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W3K62NXZV5');
+</script>
 	<TITLE>404 Not Found</TITLE>
 	 <!-- <meta http-equiv="refresh" content="0;URL=https://rkmasonryandtuckpointing.com/?404redir" /> -->
 	 
