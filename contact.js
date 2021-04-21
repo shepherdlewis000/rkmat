@@ -226,7 +226,9 @@ $(function () {
                         console.log("contact.js:227 success called in ajax (can still be danger or success alert)");
                         clearTimeout(myto); // Cancel the timeout ajax failed msg
                         console.log("contact.js:228 data is console.dir'ed below:"); // currChoice STILL undef
-                        console.dir(data);
+                      console.dir(data);// this is abbreviating!
+                      console.log(data);
+                      
                       $('#contact-form').find('.messages').html(successBox);
                       console.log("contact.js:231 should have just spit out successBox....");
                         const animateSend = setTimeout(() => {

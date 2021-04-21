@@ -1,5 +1,4 @@
 <?php
-
 // THIS JUST FOR DEBUGGING
 // ini_set('display_errors', 1); 
 // ini_set('display_startup_errors', 1); 
@@ -10,8 +9,8 @@
  */
 
 $BCC_ADDRESS = 'RkmatSysadmin <>';
-$from = 'RK-Masonry <no-reply>';
-$sendTo = 'Rob Kale <rkmat>';
+$from = 'RK-Masonry <>';
+$sendTo = 'Rob Kale <rkmat2011>';
 $subject = 'RK Masonry and Tuckpointing Form Mail';
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'need' => 'Need', 'city' => 'City', 'message' => 'Message');
 $okMessage = 'Contact form successfully submitted. Thank you, we will get back to you soon!';
@@ -51,6 +50,9 @@ try
         //exit("CAPTCHA did not verify:" . $resp['msg']);
         throw new \Exception('CAPTCHA did not verify: ' . $resp['msg']);
     } 
+    elseif(!isset($POST['captcheck_selected_answer'])) {
+        throw new \Exception('No captcheck selected: ' . $resp['msg']);
+    }
     else {
         // The CAPTCHA is valid.
         if(count($_POST) == 0)  throw new \Exception('Form is empty!');
