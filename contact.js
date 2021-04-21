@@ -223,17 +223,19 @@ $(function () {
                     url: 'contact.php',
                     data: $(this).serialize(),
                     success: function (data) {
-                        console.log("contact.js:227 success entry");
+                        console.log("contact.js:227 success called in ajax (can still be danger or success alert)");
                         clearTimeout(myto); // Cancel the timeout ajax failed msg
-                        console.log("contact.js:180 ajax success and "); // currChoice STILL undef
-                        console.log("currChoice is: " + getCurrChoice() + " and data is below:");
+                        console.log("contact.js:228 data is console.dir'ed below:"); // currChoice STILL undef
                         console.dir(data);
-                        $('#contact-form').find('.messages').html(successBox);
+                      $('#contact-form').find('.messages').html(successBox);
+                      console.log("contact.js:231 should have just spit out successBox....");
                         const animateSend = setTimeout(() => {
-                            if (data.type === 'danger') {
+                          if (data.type === 'danger') {
+                            console.log("contact.js:234 data.type is danger.");
                                 $('#contact-form').find('.messages').html(badCaptchaBox);
                             }
-                            else if (data.type === 'success') {
+                          else if (data.type === 'success') {
+                                console.log("contact.js:239 data.type is success.")
                                 $('.circle-loader').toggleClass('load-complete');
                                 $('.checkmark').toggle();
                                 $('#sentButton').text("Sent!");
@@ -254,7 +256,7 @@ $(function () {
                     
                         // If we have messageAlert and messageText
                         if (messageAlert && messageText) {
-                            console.log("line 49 in contact.js")
+                            console.log("line 256 in contact.js")
                             // inject the alert to .messages div in our form
                             $('#contact-form').find('.messages').html(alertBox);
                             $('#submit_button').hide('slow');
