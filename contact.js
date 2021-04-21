@@ -184,7 +184,8 @@ $(function () {
     </div >`;
         
     // when the form is submitted
-        $('#contact-form').on('submit', function (e) {
+  $('#contact-form').on('submit', function (e) {
+            e.target.
             const getCurrChoice = () => $("input[type=hidden][name=captcheck_selected_answer]").val();
             const getSessionCode = () => $("input[type=hidden][name=captcheck_session_code]").val();
     
@@ -211,7 +212,6 @@ $(function () {
                     //console.log("contact.js:163 currChoice is now: " + currChoice2);
                     //console.log("contact.js:159 still no currChoice, issuing timeoutBox");
                     $('#contact-form').find('.messages').html(timeoutBox);    
-                
                     return null;
                 }, 5000);
 
@@ -228,7 +228,10 @@ $(function () {
                         console.log("contact.js:228 data is console.dir'ed below:"); // currChoice STILL undef
                       console.dir(data);// this is abbreviating!
                       console.log(data);
-                      
+                      /* Problem here is that it's spitting out
+                      "<br /> arrow <b>Notice</b> Undefined index: captcheck_selected_answer in 
+                      <b>/home/rkmasonry/public_html/contact.php</b> on line <b>1</br><br />..."
+                      */
                       $('#contact-form').find('.messages').html(successBox);
                       console.log("contact.js:231 should have just spit out successBox....");
                         const animateSend = setTimeout(() => {

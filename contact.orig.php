@@ -1,8 +1,9 @@
 <?php
 // THIS JUST FOR DEBUGGING
-// ini_set('display_errors', 1); 
-// ini_set('display_startup_errors', 1); 
-// error_reporting(E_ALL);
+ ini_set('display_errors', 1); 
+ ini_set('display_startup_errors', 1); 
+error_reporting(E_ALL);
+
 
 /*
  *  CONFIGURE EVERYTHING HERE
@@ -42,21 +43,30 @@ try
         ]
     ];
 
+    error_log('captcheck_selected_answer: ' . $_POST['captcheck_selected_answer']);
+
     $context = stream_context_create($options);
     $result = file_get_contents($check_url, false, $context);
     $resp = json_decode($result, TRUE);
 
     if (!$resp['result']) {
+        error_log("contact.php:52 throwing error");
         //exit("CAPTCHA did not verify:" . $resp['msg']);
         throw new \Exception('CAPTCHA did not verify: ' . $resp['msg']);
     } 
-    elseif(!isset($POST['captcheck_selected_answer'])) {
+    /* elseif(!isset($POST['captcheck_selected_answer'])) {
         throw new \Exception('No captcheck selected: ' . $resp['msg']);
-    }
+    } */
+
     else {
         // The CAPTCHA is valid.
-        if(count($_POST) == 0)  throw new \Exception('Form is empty!');
-        
+        error_log("contact.php:63 entered else");
+
+        if(count($_POST) == 0) {  
+            throw new \Exception('Form is empty!');
+            error_log("contact.php:67 form is empty, throwing exception");
+        }
+
         $emailText = "New message from the contact form at rkmasonryandtuckpointing.com\n\n";
 
         foreach ($_POST as $key => $value) {
@@ -74,18 +84,25 @@ try
         );
         mail($sendTo, $subject, $emailText, implode("\n", $headers));
         $responseArray = array('type' => 'success', 'message' => $okMessage);
+
+        error_log("contact.php:88 setting responseArray with type success and message: " . $okMessage);
     } // end else
 }
 catch (\Exception $e)
-{ $responseArray = array('type' => 'danger', 'message' => $errorMessage); }
+{   error_log("contact.php:92 throwing exception, setting responseArray type to danger and message: " . $errorMessage); 
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage); 
+}
 
 // if requested by AJAX request return JSON response
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     $encoded = json_encode($responseArray);
+    error_log("contact.php:99 entered if and encoded is " . $encoded);
+
     header('Content-Type: application/json');
     echo $encoded;
 }
 // else just display the message
 else {
+    error_log("contact.php:106 just echoing message");
     echo $responseArray['message'];
 }
