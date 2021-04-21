@@ -1,0 +1,58 @@
+<!-- I crafted this to pass the bad referrer and bad requested page after a timeout or upon 
+clicking the link -->
+<HTML>
+<HEAD>
+	<TITLE>404 Not Found</TITLE>
+	 <!-- <meta http-equiv="refresh" content="0;URL=https://rkmasonryandtuckpointing.com/?404redir" /> -->
+	 
+</HEAD>
+<BODY>
+	
+    	
+	<h1>404: Page does not exist!</h1>
+	<h3>Requested URL couldn't be found.</h3>
+	<h4>Redirecting to 
+		<a id="newUrlHref">RK Masonry and Tuckpointing homepage</a> 
+		after 
+		<span id="countdown">7</span> seconds
+	</h3>
+	
+	<script>
+		var referrer = encodeURIComponent(document.referrer);
+    		var badPage = encodeURIComponent(location.href);
+    		var newUrl = 'https://rkmasonryandtuckpointing.com/?source=404&referrer=' + referrer + "&badPage=" + badPage;
+    		var href = document.getElementById('newUrlHref');
+    		href.setAttribute('href', newUrl);
+    		</script>
+    		
+<!-- JavaScript part -->
+<script type="text/javascript">
+	
+		
+    	
+    var referrer = encodeURIComponent(document.referrer);
+    var badPage = encodeURIComponent(location.href);
+    var newUrl = 'https://rkmasonryandtuckpointing.com/?source=404&referrer=' + referrer + "&badPage=" + badPage;
+    console.log("newURL: " + newUrl);
+    
+    // Total seconds to wait
+    var seconds = 7;
+    
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Chnage your redirection link here
+            window.location = newUrl;
+        } else {
+            // Update remaining seconds
+            document.getElementById("countdown").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+    
+    // Run countdown function
+    countdown();
+</script>
+
+</BODY>
