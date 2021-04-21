@@ -8,9 +8,9 @@
  *  CONFIGURE EVERYTHING HERE
  */
 
-$BCC_ADDRESS = 'RkmatSysadmin <>';
-$from = 'RK-Masonry <>';
-$sendTo = 'Rob Kale <rkmat2011>';
+$BCC_ADDRESS = 'RkmatSysadmin <jk...>';
+$from = 'RK-Masonry <form-mailer..>';
+$sendTo = 'Rob Kale <rkmat2011...>';
 $subject = 'RK Masonry and Tuckpointing Form Mail';
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'need' => 'Need', 'city' => 'City', 'message' => 'Message');
 $okMessage = 'Contact form successfully submitted. Thank you, we will get back to you soon!';
