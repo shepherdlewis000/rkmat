@@ -1,0 +1,22 @@
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://rkmasonryandtuckpointing.com/$1 [R=301,L,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+RewriteCond %{HTTP_HOST} ^www\.rkmasonryandtuckpointing\.com [NC]
+RewriteRule ^(.*)$ https://rkmasonryandtuckpointing.com/$1 [L,R=301]
+
+#This didn't work
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Haven't tried this but came from a freeCodeCamp article - notice no 301
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^yourdomain\.com [NC]
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://www.yourdomain.com/$1 [R,L]
+
+# (this is important, so uncomment if your host permit)
+Options -Indexes
+ServerSignature Off
