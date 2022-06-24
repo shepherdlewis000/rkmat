@@ -222,7 +222,6 @@ $(function () {
                     type: "POST",
                     url: 'contact.php',
                     enctype: 'multipart/form-data',
-                    data: $(this).serialize(),
                     success: function (data) {
                         console.log("contact.js:227 success called in ajax (can still be danger or success alert)");
                         clearTimeout(myto); // Cancel the timeout ajax failed msg
