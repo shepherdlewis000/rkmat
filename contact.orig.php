@@ -52,7 +52,7 @@ try
     if (!$resp['result']) {
         error_log("contact.php:52 throwing error");
         //exit("CAPTCHA did not verify:" . $resp['msg']);
-        throw new \Exception('CAPTCHA did not verify.');
+        throw new \Exception('CAPTCHA did not verify: ' . $resp['msg']);
     } 
     /* elseif(!isset($POST['captcheck_selected_answer'])) {
         throw new \Exception('No captcheck selected: ' . $resp['msg']);
