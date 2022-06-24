@@ -221,6 +221,7 @@ $(function () {
                 $.ajax({
                     type: "POST",
                     url: 'contact.php',
+                    enctype: 'multipart/form-data',
                     data: $(this).serialize(),
                     success: function (data) {
                         console.log("contact.js:227 success called in ajax (can still be danger or success alert)");
