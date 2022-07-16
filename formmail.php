@@ -555,14 +555,14 @@ $BODY_LF = "\r\n"; /* the new default: use this for CR+LF */
 //$BODY_LF = "\n";       /* the old default: just LF */
 
 /* Help: http://www.tectite.com/fmdoc/from_user.php */
-$FROM_USER = ""; /* the default - setting not used */
+$FROM_USER = "no-reply@rkmasonryandtuckpointing.com"; /* the default - setting not used */
 
 /* Help: http://www.tectite.com/fmdoc/sendmail_f_option.php */
 $SENDMAIL_F_OPTION      = false;
 $SENDMAIL_F_OPTION_LINE = __LINE__ - 1; /* don't modify this line! */
 
 /* Help: http://www.tectite.com/fmdoc/fixed_sender.php */
-$FIXED_SENDER = "";
+$FIXED_SENDER = "no-reply@rkmasonryandtuckpointing.com";
 
 /* Help: http://www.tectite.com/fmdoc/set_sender_from_email.php */
 $SET_SENDER_FROM_EMAIL = false;
